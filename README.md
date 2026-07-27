@@ -1,136 +1,126 @@
-# BudgetWise Frontend - واجهة المستخدم 💰
+# BudgetWise Frontend
 
-الواجهة الأمامية (Frontend) لتطبيق **BudgetWise**، منصة ذكية متكاملة لإدارة الميزانية الشخصية، مبنية بـ **React.js** ومصممة لتوفير تجربة مستخدم سلسة وعصرية.
+Frontend for **BudgetWise**, a modern personal budget management platform built with **React.js**. The application enables users to manage budgets, explore activities, receive AI-powered financial recommendations, and communicate through an integrated AI chat.
 
----
+## Live Demo
 
-## 🚀 التقنيات المستخدمة
+**Frontend:** https://budget-wise-front-end-w7fh.vercel.app/
 
-| التقنية | الوصف |
-|---|---|
-| **React 19** | إطار العمل الأساسي لبناء الواجهة |
-| **React Router v7** | إدارة التنقل بين الصفحات (Routing) |
-| **Axios** | التواصل مع الباك إند عبر HTTP |
-| **TanStack React Query** | إدارة حالة البيانات (Data Fetching & Caching) |
-| **Recharts** | رسم الرسوم البيانية للإحصائيات المالية |
-| **Socket.io Client** | الاتصال الفوري للإشعارات (WebSockets) |
-| **i18next** | دعم اللغات المتعددة (عربي / إنجليزي) |
-| **Bootstrap 5** | مكتبة تنسيق الواجهة |
+**Backend API:** https://budget-wise-back-end-five.vercel.app/
+
+**Backend Repository:** https://github.com/MoaazYahia-14/BudgetWise_BackEnd
 
 ---
 
-## 📂 هيكل المجلدات
+## Technologies
 
-```
+| Technology | Description |
+|------------|-------------|
+| React 19 | Frontend framework |
+| React Router v7 | Client-side routing |
+| Axios | HTTP client |
+| TanStack React Query | Data fetching & caching |
+| Recharts | Charts & Analytics |
+| Socket.IO Client | Real-time communication |
+| i18next | Internationalization |
+| Bootstrap 5 | UI framework |
+
+---
+
+## Features
+
+- User Authentication
+- Budget Management
+- Expense Tracking
+- AI Financial Assistant
+- Activity Explorer
+- Founder Dashboard
+- Real-Time Notifications
+- Interactive Charts & Analytics
+- Multi-language Support (English & Arabic)
+
+---
+
+## Project Structure
+
+```text
 src/
-├── pages/                  # صفحات التطبيق الرئيسية
-│   ├── auth/               # صفحات المصادقة
-│   │   ├── Login.jsx       # تسجيل الدخول (+ Google & Facebook)
-│   │   ├── Signup.jsx      # إنشاء حساب جديد
-│   │   ├── RoleSelection.jsx # اختيار نوع الحساب (مستخدم / فاوندر)
-│   │   └── AuthCallback.jsx  # التعامل مع تسجيل الدخول الاجتماعي
-│   ├── founder/            # صفحات لوحة تحكم الفاوندر (صاحب النشاط)
-│   │   ├── FounderDashboard.jsx   # لوحة الإحصائيات
-│   │   ├── FounderHome.jsx        # الصفحة الرئيسية للفاوندر
-│   │   ├── FounderPosts.jsx       # إدارة منشورات الأنشطة
-│   │   └── FounderPostDetails.jsx # تفاصيل نشاط معين
-│   ├── Home.jsx            # الصفحة الرئيسية للمستخدم
-│   ├── Explore.jsx         # استكشاف الأنشطة المتاحة وتصفيتها
-│   ├── ActivityDetails.jsx # تفاصيل نشاط معين
-│   ├── MyPlan.jsx          # خطة المستخدم والأنشطة المحجوزة
-│   ├── Budget.jsx          # إدارة الميزانية وعرض الإحصائيات
-│   ├── Chat.jsx            # المساعد الذكي للنصائح المالية
-│   ├── Settings.jsx        # إعدادات الملف الشخصي
-│   └── NotFound.jsx        # صفحة 404
-├── components/             # المكونات المشتركة (القابلة لإعادة الاستخدام)
-│   ├── Sidebar.jsx         # القائمة الجانبية
-│   ├── Navbar.jsx          # شريط التنقل العلوي
-│   ├── ProtectedRoute.jsx  # حماية صفحات المستخدم المسجل
-│   ├── ErrorBoundary.jsx   # معالجة الأخطاء
-│   └── MouseTrackingBackground.jsx # خلفية تفاعلية ديناميكية
-├── context/                # React Context لإدارة الحالة العامة
-├── services/               # طبقة التواصل مع الـ API
-├── locales/                # ملفات الترجمة (عربي / إنجليزي)
-├── styles/                 # ملفات CSS المخصصة لكل صفحة
-├── utils/                  # دوال مساعدة
-└── config.js               # إعدادات الرابط المركزي للـ API
+├── pages/
+├── components/
+├── context/
+├── services/
+├── locales/
+├── styles/
+├── utils/
+└── config.js
 ```
 
 ---
 
-## 🌟 مميزات التطبيق
+## Installation
 
-### 👤 للمستخدم العادي
-- **الصفحة الرئيسية (Home):** نظرة عامة على حالة الميزانية وأبرز الإحصائيات.
-- **استكشاف الأنشطة (Explore):** تصفح وفلترة الأنشطة والخدمات المتاحة حسب الفئة والسعر والمدينة.
-- **خطتي (My Plan):** عرض وإدارة الأنشطة التي قام بإضافتها إلى خطته مع تتبع الميزانية المستخدمة.
-- **الميزانية (Budget):** إنشاء وتعديل الميزانية الشخصية مع رسوم بيانية تفاعلية توضح نسب الإنفاق.
-- **المساعد الذكي (Chat):** دردشة مدمجة مع الذكاء الاصطناعي لتلقي نصائح مالية مخصصة بناءً على بياناتك.
-- **الإعدادات (Settings):** تعديل الملف الشخصي، الصورة، كلمة المرور، والتفضيلات (العملة، الموقع).
+### Requirements
 
-### 🏢 للفاوندر (صاحب النشاط)
-- **لوحة التحكم (Dashboard):** إحصائيات شاملة عن المشاهدات والمحفوظات والتقييمات.
-- **إدارة الأنشطة (Posts):** نشر، تعديل، وحذف الأنشطة مع دعم رفع الصور.
-- **تفاصيل النشاط:** عرض تقييمات المستخدمين ومتابعة أداء كل نشاط.
+- Node.js v18 or later
+- BudgetWise Backend API
 
-### 🔐 المصادقة والأمان
-- تسجيل الدخول وإنشاء الحساب بالبريد الإلكتروني.
-- تسجيل الدخول عبر **Google** و **Facebook** (OAuth).
-- التحقق من الهوية عبر رمز OTP.
-- استعادة كلمة المرور.
+### Install Dependencies
 
----
+```bash
+npm install
+```
 
-## 🛠️ كيفية تشغيل المشروع
+### Environment Variables
 
-### متطلبات التشغيل
-- Node.js v18 أو أحدث.
-- الباك إند يجب أن يكون شغالاً (سواء محلياً أو على Vercel).
+Create a `.env` file in the project root.
 
-### التطوير المحلي
+```env
+REACT_APP_API_URL=http://localhost:5000/api
+REACT_APP_SOCKET_URL=http://localhost:5000
+```
 
-1. **تثبيت الحزم:**
-   ```bash
-   npm install
-   ```
+### Run the Application
 
-2. **إعداد ملف البيئة:**
-   أنشئ ملف `.env` في المسار الجذري بالمحتوى التالي:
-   ```env
-   # للتطوير المحلي (الباك إند على جهازك):
-   REACT_APP_API_URL=http://localhost:5000/api
-   REACT_APP_SOCKET_URL=http://localhost:5000
+```bash
+npm start
+```
 
-   # للتطوير مع الباك إند المرفوع على Vercel:
-   # REACT_APP_API_URL=https://budget-wise-back-end-five.vercel.app/api
-   # REACT_APP_SOCKET_URL=https://budget-wise-back-end-five.vercel.app
-   ```
+The application will run on:
 
-3. **تشغيل التطبيق:**
-   ```bash
-   npm start
-   ```
-   سيعمل التطبيق على `http://localhost:3000`
+```text
+http://localhost:3000
+```
 
 ---
 
-## ☁️ الاستضافة على Vercel
+## Deployment
 
-المشروع جاهز للرفع المباشر على Vercel.
+The project is ready for deployment on **Vercel**.
 
-> [!IMPORTANT]
-> **متغيرات البيئة المطلوبة في Vercel (Settings → Environment Variables):**
-> - `REACT_APP_API_URL` = `https://budget-wise-back-end-five.vercel.app/api`
-> - `REACT_APP_SOCKET_URL` = `https://budget-wise-back-end-five.vercel.app`
+Required Environment Variables:
 
----
-
-## 🔗 الربط مع الباك إند
-
-يعتمد التطبيق بشكل كامل على ملف [`config.js`](./src/config.js) لتحديد رابط الـ API مركزياً بدلاً من كتابته في كل مكان، مما يجعل التبديل بين بيئة التطوير والإنتاج أمراً سهلاً للغاية.
-
-**رابط الباك إند المباشر:** `https://budget-wise-back-end-five.vercel.app`
+```env
+REACT_APP_API_URL=https://budget-wise-back-end-five.vercel.app/api
+REACT_APP_SOCKET_URL=https://budget-wise-back-end-five.vercel.app
+```
 
 ---
 
-**تطوير:** فريق BudgetWise
+## Architecture
+
+- Component-Based Architecture
+- REST API Integration
+- Protected Routes
+- Global State Management
+- Responsive User Interface
+- Production Ready
+
+---
+
+## Backend
+
+The frontend communicates with the BudgetWise Backend API built with **Node.js**, **Express.js**, and **MongoDB Atlas**.
+
+**Backend API:** https://budget-wise-back-end-five.vercel.app/
+
+**Backend Repository:** https://github.com/MoaazYahia-14/BudgetWise_BackEnd
