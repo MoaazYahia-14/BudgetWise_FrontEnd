@@ -1,0 +1,751 @@
+/* ===================================
+   Settings.css — صفحة الإعدادات
+   =================================== */
+
+.settings-page {
+  padding: 32px 40px;
+  background-color: var(--background);
+  min-height: 100vh;
+  box-sizing: border-box;
+  font-family: 'Inter', sans-serif;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* ── Header ── */
+.set-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 32px;
+}
+
+.set-title {
+  margin: 0 0 8px;
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--text-main);
+}
+
+.set-subtitle {
+  margin: 0;
+  font-size: 14px;
+  color: var(--text-secondary);
+}
+
+.set-btn-edit {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background-color: #374151;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 20px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: opacity 0.2s;
+}
+
+.set-btn-edit:hover {
+  opacity: 0.9;
+}
+
+body.dark .set-btn-edit {
+  background-color: #4B5563;
+}
+
+/* ── User Info Card ── */
+.set-user-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 24px;
+  background-color: #fff;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  margin-bottom: 32px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.02);
+}
+
+body.dark .set-user-card {
+  background-color: #1e1e2d;
+  border-color: #2b2b40;
+}
+
+.set-user-card-left {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.set-avatar {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid var(--border);
+}
+
+.set-user-info h3 {
+  margin: 0 0 4px;
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--text-main);
+}
+
+.set-user-info p {
+  margin: 0;
+  font-size: 14px;
+  color: var(--text-secondary);
+}
+
+.set-btn-change-photo {
+  padding: 10px 20px;
+  background-color: transparent;
+  border: 1px solid var(--primary);
+  color: var(--primary);
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+  white-space: nowrap;
+}
+
+.set-btn-change-photo:hover {
+  background-color: var(--primary);
+  color: #fff;
+}
+
+/* ── Sections ── */
+.set-section {
+  background-color: #fff;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 24px;
+  margin-bottom: 24px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.02);
+}
+
+body.dark .set-section {
+  background-color: #1e1e2d;
+  border-color: #2b2b40;
+}
+
+.set-section-title {
+  margin: 0 0 24px;
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--text-main);
+}
+
+.set-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+}
+
+/* ── Form Inputs ── */
+.set-input-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.set-input-group label {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-main);
+}
+
+.set-input-group input,
+.set-input-group select {
+  width: 100%;
+  padding: 12px 16px;
+  border: 1px solid #E5E7EB;
+  border-radius: 8px;
+  font-size: 14px;
+  color: var(--text-main);
+  background-color: #fff;
+  outline: none;
+  transition: border-color 0.2s;
+  box-sizing: border-box;
+}
+
+.set-input-group input:focus,
+.set-input-group select:focus {
+  border-color: var(--primary);
+}
+
+.set-input-group input:disabled,
+.set-input-group select:disabled {
+  background-color: #F3F4F6;
+  color: #6B7280;
+  cursor: not-allowed;
+  border-color: #E5E7EB;
+}
+
+body.dark .set-input-group input,
+body.dark .set-input-group select {
+  background-color: #1a1a2e;
+  border-color: #2a2a40;
+  color: #E2E8F0;
+}
+
+body.dark .set-input-group input:disabled,
+body.dark .set-input-group select:disabled {
+  background-color: #151525;
+  color: #9CA3AF;
+  border-color: #2a2a40;
+  opacity: 0.7;
+}
+
+/* ── Edit Modal ── */
+.set-edit-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  width: 100%;
+}
+.set-edit-form .set-input-group {
+  width: 100%;
+  text-align: left;
+}
+body[dir="rtl"] .set-edit-form .set-input-group {
+  text-align: right;
+}
+.set-edit-form .set-grid {
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+@media (max-width: 480px) {
+  .set-edit-form .set-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ── Select Wrapper ── */
+.set-select-wrapper {
+  position: relative;
+  width: 100%;
+}
+
+.set-select-wrapper select {
+  appearance: none;
+  cursor: pointer;
+  padding-right: 40px; /* space for icon */
+}
+
+body[dir="rtl"] .set-select-wrapper select {
+  padding-right: 16px;
+  padding-left: 40px;
+}
+
+.set-select-icon {
+  position: absolute;
+  top: 50%;
+  right: 16px;
+  transform: translateY(-50%);
+  pointer-events: none;
+}
+
+body[dir="rtl"] .set-select-icon {
+  right: auto;
+  left: 16px;
+}
+
+/* ── Password Wrapper ── */
+.set-password-wrapper {
+  position: relative;
+  width: 100%;
+}
+
+.set-password-wrapper input {
+  padding-right: 40px;
+}
+
+body[dir="rtl"] .set-password-wrapper input {
+  padding-right: 16px;
+  padding-left: 40px;
+}
+
+.set-eye-icon {
+  position: absolute;
+  top: 50%;
+  right: 16px;
+  transform: translateY(-50%);
+  cursor: pointer;
+}
+
+body[dir="rtl"] .set-eye-icon {
+  right: auto;
+  left: 16px;
+}
+
+/* ── Actions ── */
+.set-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 16px;
+  margin-bottom: 40px;
+}
+
+.set-btn-cancel {
+  padding: 10px 24px;
+  background-color: transparent;
+  border: 1px solid var(--primary);
+  color: var(--primary);
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.set-btn-cancel:hover {
+  background-color: var(--primary);
+  color: #fff;
+}
+
+.set-btn-save {
+  padding: 10px 24px;
+  background-color: var(--primary);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: opacity 0.2s;
+}
+
+.set-btn-save:hover {
+  opacity: 0.9;
+}
+
+/* ── Danger Zone ── */
+.set-danger-zone {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 24px;
+  background-color: #FEF2F2;
+  border: 1px dashed #FCA5A5;
+  border-radius: 12px;
+}
+
+body.dark .set-danger-zone {
+  background-color: rgba(220, 38, 38, 0.05);
+  border-color: rgba(220, 38, 38, 0.3);
+}
+
+.set-danger-left {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.set-danger-text h3 {
+  margin: 0 0 4px;
+  font-size: 16px;
+  font-weight: 700;
+  color: #DC2626;
+}
+
+.set-danger-text p {
+  margin: 0;
+  font-size: 13px;
+  color: var(--text-secondary);
+}
+
+.set-btn-delete {
+  padding: 10px 20px;
+  background-color: #DC2626;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: opacity 0.2s;
+  white-space: nowrap;
+}
+
+.set-btn-delete:hover {
+  opacity: 0.9;
+}
+
+/* ======================================
+   Responsive Layouts
+   ====================================== */
+@media (max-width: 768px) {
+  .settings-page {
+    padding: 20px 16px 90px;
+  }
+
+  .set-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+  }
+
+  .set-user-card {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 16px;
+  }
+
+  .set-user-card-left {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .set-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .set-danger-zone {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+  }
+
+  .set-btn-delete {
+    width: 100%;
+  }
+
+  .set-actions {
+    flex-direction: column-reverse;
+  }
+
+  .set-actions button {
+    width: 100%;
+  }
+}
+
+/* ========================
+   OTP Popup Styles (Copied from Login.css)
+   ======================== */
+
+.otp-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.otp-popup {
+  background: white;
+  border-radius: 16px;
+  padding: 40px;
+  width: 100%;
+  max-width: 420px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  direction: inherit;
+  position: relative;
+  animation: otp-popup-in 0.3s ease forwards;
+}
+
+body.dark .otp-popup {
+  background: #1e1e2d;
+}
+
+.otp-icon {
+  font-size: 48px;
+}
+
+.otp-popup h2 {
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--text-main);
+  margin: 0;
+}
+
+.otp-subtitle {
+  font-size: 14px;
+  color: var(--text-secondary);
+  line-height: 1.6;
+  margin: 0;
+  direction: inherit;
+  text-align: center;
+}
+
+.otp-success-screen {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  padding: 10px 0;
+}
+
+.otp-success-logo {
+  width: 160px;
+  height: auto;
+  margin-bottom: 8px;
+}
+
+.otp-checkmark {
+  width: 80px;
+  height: 80px;
+}
+
+.otp-checkmark-svg {
+  width: 80px;
+  height: 80px;
+  stroke: #10B981;
+  stroke-width: 3;
+}
+
+.otp-checkmark-circle {
+  stroke-dasharray: 166;
+  stroke-dashoffset: 166;
+  stroke: #10B981;
+  animation: otp-circle 0.6s ease forwards;
+}
+
+.otp-checkmark-path {
+  stroke-dasharray: 48;
+  stroke-dashoffset: 48;
+  animation: otp-check 0.4s 0.6s ease forwards;
+}
+
+@keyframes otp-circle {
+  to { stroke-dashoffset: 0; }
+}
+
+@keyframes otp-check {
+  to { stroke-dashoffset: 0; }
+}
+
+.otp-success-title {
+  font-size: 22px;
+  font-weight: 700;
+  color: #10B981;
+  margin: 0;
+}
+
+.otp-success-msg {
+  font-size: 14px;
+  color: var(--text-secondary);
+  text-align: center;
+  margin: 0;
+  line-height: 1.6;
+}
+
+.otp-inputs {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  margin: 8px 0;
+  direction: ltr;
+}
+
+.otp-input {
+  width: 48px;
+  height: 56px;
+  border: 2px solid var(--border);
+  border-radius: 10px;
+  text-align: center;
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--text-main);
+  background: var(--background);
+  outline: none;
+  transition: border-color 0.2s ease;
+  direction: ltr;
+}
+
+.otp-input:focus {
+  border-color: var(--primary);
+}
+
+.otp-error {
+  color: #EF4444;
+  font-size: 13px;
+  margin: 0;
+}
+
+.otp-btn {
+  width: 100%;
+  height: 52px;
+  background: var(--primary);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: opacity 0.2s ease;
+}
+
+.otp-btn:hover {
+  opacity: 0.9;
+}
+
+.otp-popup-closing {
+  animation: otp-popup-out 0.3s ease forwards;
+}
+
+@keyframes otp-popup-in {
+  from {
+    opacity: 0;
+    transform: scale(0.9) translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+@keyframes otp-popup-out {
+  from {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: scale(0.9) translateY(20px);
+  }
+}
+
+.otp-close-btn {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--text-secondary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4px;
+  border-radius: 50%;
+  transition: background 0.2s, color 0.2s;
+}
+
+.otp-close-btn:hover {
+  background: var(--card-bg);
+  color: var(--text-main);
+}
+
+body[dir="rtl"] .otp-close-btn {
+  right: unset;
+  left: 16px;
+}
+
+.delete-modal-actions {
+  display: flex;
+  gap: 12px;
+  width: 100%;
+  margin-top: 24px;
+}
+
+.delete-modal-actions button {
+  flex: 1;
+  padding: 12px;
+}
+
+@media (max-width: 480px) {
+  .otp-popup {
+    padding: 24px;
+    width: 90%;
+  }
+  .delete-modal-actions {
+    flex-direction: column-reverse;
+  }
+  .delete-modal-actions button {
+    width: 100%;
+  }
+}
+
+/* ==================================
+   React DatePicker Custom Styles
+   ================================== */
+.react-datepicker-wrapper {
+  width: 100%;
+}
+.react-datepicker__input-container input {
+  width: 100%;
+  padding: 12px 16px;
+  border: 1px solid #E5E7EB;
+  border-radius: 8px;
+  font-size: 14px;
+  color: var(--text-main);
+  background-color: #fff;
+  outline: none;
+  transition: border-color 0.2s, box-shadow 0.2s;
+  box-sizing: border-box;
+}
+.react-datepicker__input-container input:focus {
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(108, 99, 255, 0.1);
+}
+body.dark .react-datepicker__input-container input {
+  background-color: #1a1a2e;
+  border-color: #2a2a40;
+  color: #E2E8F0;
+}
+
+.react-datepicker {
+  font-family: 'Inter', sans-serif !important;
+  border: none !important;
+  border-radius: 12px !important;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1) !important;
+  background-color: #fff !important;
+  animation: pageEntrance 0.3s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+  overflow: hidden;
+}
+body.dark .react-datepicker {
+  background-color: #1e1e2d !important;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5) !important;
+}
+
+.react-datepicker__header {
+  background-color: var(--primary) !important;
+  border-bottom: none !important;
+  border-top-left-radius: 12px !important;
+  border-top-right-radius: 12px !important;
+  padding-top: 16px !important;
+}
+.react-datepicker__current-month,
+.react-datepicker__day-name {
+  color: #fff !important;
+  font-weight: 600 !important;
+}
+.react-datepicker__navigation-icon::before {
+  border-color: #fff !important;
+}
+.react-datepicker__day {
+  color: var(--text-main) !important;
+  border-radius: 50% !important;
+  transition: all 0.2s !important;
+}
+.react-datepicker__day:hover {
+  background-color: rgba(108, 99, 255, 0.1) !important;
+  color: var(--primary) !important;
+}
+.react-datepicker__day--selected,
+.react-datepicker__day--keyboard-selected {
+  background-color: var(--primary) !important;
+  color: #fff !important;
+}
+body.dark .react-datepicker__day {
+  color: #E2E8F0 !important;
+}
+body.dark .react-datepicker__day:hover {
+  background-color: rgba(108, 99, 255, 0.2) !important;
+}

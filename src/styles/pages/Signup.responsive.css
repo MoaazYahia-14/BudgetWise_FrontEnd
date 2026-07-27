@@ -1,0 +1,37 @@
+/* ===================================
+   استجابة صفحة إنشاء الحساب للشاشات
+   =================================== */
+
+@media (max-width: 768px) {
+
+  /* إخفاء الجانب الأيسر بالكامل */
+  .signup-left {
+    display: none;
+  }
+
+  /* الجانب الأيمن يأخذ العرض الكامل */
+  .signup-right {
+    width: 100%;
+    padding: 30px 20px;
+  }
+
+  /* تصغير الشعار */
+  .signup-logo {
+    width: 150px;
+  }
+
+  /* الحقول تبقى بالعرض الكامل */
+  .signup-input {
+    width: 100%;
+  }
+
+  /* أزرار التواصل الاجتماعي */
+  .signup-social-buttons {
+    flex-direction: column;
+  }
+
+  .signup-social-btn {
+    width: 100%;
+  }
+
+}

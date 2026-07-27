@@ -7,7 +7,59 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+/* Prevent body scrolling when a modal popup is present */
+body:has(.otp-overlay) {
+  overflow: hidden;
+}
+
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+/* ==================================
+   Page Transition Animations
+   ================================== */
+.page-transition {
+  animation: pageEntrance 0.6s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+  transform-origin: top center;
+  will-change: opacity, transform, filter;
+}
+
+@keyframes pageEntrance {
+  0% {
+    opacity: 0;
+    transform: translateY(40px) scale(0.96);
+    filter: blur(5px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    filter: blur(0);
+  }
+}
+
+/* ==================================
+   Auto RTL/LTR Support for Multi-language Text
+   ================================== */
+/* 
+   This ensures that any input or text block dynamically 
+   detects if the text is Arabic (RTL) or English (LTR) 
+   and aligns/directs it properly.
+*/
+input, textarea, select, 
+p, h1, h2, h3, h4, h5, h6,
+.auto-dir {
+  unicode-bidi: plaintext;
+  text-align: start;
+}
+
+/* Pre-wrap ensures newlines are preserved and text is not jumbled in posts/activities */
+textarea,
+.activity-desc, 
+.post-content, 
+.post-text, 
+.chat-message,
+.message-content {
+  white-space: pre-wrap;
 }

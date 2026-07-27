@@ -1,0 +1,79 @@
+.not-found-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background-color: var(--background);
+  color: var(--text-main);
+  text-align: center;
+  padding: 20px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.not-found-content {
+  max-width: 600px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.not-found-title {
+  font-size: 120px;
+  font-weight: 800;
+  margin: 0;
+  background: linear-gradient(135deg, var(--primary), #8B5CF6);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 0 10px 30px rgba(108, 99, 255, 0.2);
+}
+
+.not-found-subtitle {
+  font-size: 32px;
+  font-weight: 600;
+  margin: 0;
+  color: var(--text-main);
+}
+
+.not-found-text {
+  font-size: 16px;
+  color: var(--text-muted);
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+.not-found-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--primary);
+  color: #fff;
+  padding: 12px 24px;
+  border-radius: 12px;
+  font-size: 16px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  border: none;
+  cursor: pointer;
+}
+
+.not-found-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(108, 99, 255, 0.3);
+}
+
+.not-found-illustration {
+  width: 100%;
+  max-width: 400px;
+  margin-bottom: 30px;
+}
+
+/* Dark mode specific adjustments if needed */
+body.dark .not-found-container {
+  /* Using variables natively handles this, but adding specific shadow for dark mode */
+}
+body.dark .not-found-title {
+  text-shadow: 0 10px 30px rgba(108, 99, 255, 0.4);
+}

@@ -1,70 +1,136 @@
-# Getting Started with Create React App
+# BudgetWise Frontend - واجهة المستخدم 💰
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+الواجهة الأمامية (Frontend) لتطبيق **BudgetWise**، منصة ذكية متكاملة لإدارة الميزانية الشخصية، مبنية بـ **React.js** ومصممة لتوفير تجربة مستخدم سلسة وعصرية.
 
-## Available Scripts
+---
 
-In the project directory, you can run:
+## 🚀 التقنيات المستخدمة
 
-### `npm start`
+| التقنية | الوصف |
+|---|---|
+| **React 19** | إطار العمل الأساسي لبناء الواجهة |
+| **React Router v7** | إدارة التنقل بين الصفحات (Routing) |
+| **Axios** | التواصل مع الباك إند عبر HTTP |
+| **TanStack React Query** | إدارة حالة البيانات (Data Fetching & Caching) |
+| **Recharts** | رسم الرسوم البيانية للإحصائيات المالية |
+| **Socket.io Client** | الاتصال الفوري للإشعارات (WebSockets) |
+| **i18next** | دعم اللغات المتعددة (عربي / إنجليزي) |
+| **Bootstrap 5** | مكتبة تنسيق الواجهة |
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+---
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## 📂 هيكل المجلدات
 
-### `npm test`
+```
+src/
+├── pages/                  # صفحات التطبيق الرئيسية
+│   ├── auth/               # صفحات المصادقة
+│   │   ├── Login.jsx       # تسجيل الدخول (+ Google & Facebook)
+│   │   ├── Signup.jsx      # إنشاء حساب جديد
+│   │   ├── RoleSelection.jsx # اختيار نوع الحساب (مستخدم / فاوندر)
+│   │   └── AuthCallback.jsx  # التعامل مع تسجيل الدخول الاجتماعي
+│   ├── founder/            # صفحات لوحة تحكم الفاوندر (صاحب النشاط)
+│   │   ├── FounderDashboard.jsx   # لوحة الإحصائيات
+│   │   ├── FounderHome.jsx        # الصفحة الرئيسية للفاوندر
+│   │   ├── FounderPosts.jsx       # إدارة منشورات الأنشطة
+│   │   └── FounderPostDetails.jsx # تفاصيل نشاط معين
+│   ├── Home.jsx            # الصفحة الرئيسية للمستخدم
+│   ├── Explore.jsx         # استكشاف الأنشطة المتاحة وتصفيتها
+│   ├── ActivityDetails.jsx # تفاصيل نشاط معين
+│   ├── MyPlan.jsx          # خطة المستخدم والأنشطة المحجوزة
+│   ├── Budget.jsx          # إدارة الميزانية وعرض الإحصائيات
+│   ├── Chat.jsx            # المساعد الذكي للنصائح المالية
+│   ├── Settings.jsx        # إعدادات الملف الشخصي
+│   └── NotFound.jsx        # صفحة 404
+├── components/             # المكونات المشتركة (القابلة لإعادة الاستخدام)
+│   ├── Sidebar.jsx         # القائمة الجانبية
+│   ├── Navbar.jsx          # شريط التنقل العلوي
+│   ├── ProtectedRoute.jsx  # حماية صفحات المستخدم المسجل
+│   ├── ErrorBoundary.jsx   # معالجة الأخطاء
+│   └── MouseTrackingBackground.jsx # خلفية تفاعلية ديناميكية
+├── context/                # React Context لإدارة الحالة العامة
+├── services/               # طبقة التواصل مع الـ API
+├── locales/                # ملفات الترجمة (عربي / إنجليزي)
+├── styles/                 # ملفات CSS المخصصة لكل صفحة
+├── utils/                  # دوال مساعدة
+└── config.js               # إعدادات الرابط المركزي للـ API
+```
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+---
 
-### `npm run build`
+## 🌟 مميزات التطبيق
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### 👤 للمستخدم العادي
+- **الصفحة الرئيسية (Home):** نظرة عامة على حالة الميزانية وأبرز الإحصائيات.
+- **استكشاف الأنشطة (Explore):** تصفح وفلترة الأنشطة والخدمات المتاحة حسب الفئة والسعر والمدينة.
+- **خطتي (My Plan):** عرض وإدارة الأنشطة التي قام بإضافتها إلى خطته مع تتبع الميزانية المستخدمة.
+- **الميزانية (Budget):** إنشاء وتعديل الميزانية الشخصية مع رسوم بيانية تفاعلية توضح نسب الإنفاق.
+- **المساعد الذكي (Chat):** دردشة مدمجة مع الذكاء الاصطناعي لتلقي نصائح مالية مخصصة بناءً على بياناتك.
+- **الإعدادات (Settings):** تعديل الملف الشخصي، الصورة، كلمة المرور، والتفضيلات (العملة، الموقع).
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### 🏢 للفاوندر (صاحب النشاط)
+- **لوحة التحكم (Dashboard):** إحصائيات شاملة عن المشاهدات والمحفوظات والتقييمات.
+- **إدارة الأنشطة (Posts):** نشر، تعديل، وحذف الأنشطة مع دعم رفع الصور.
+- **تفاصيل النشاط:** عرض تقييمات المستخدمين ومتابعة أداء كل نشاط.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### 🔐 المصادقة والأمان
+- تسجيل الدخول وإنشاء الحساب بالبريد الإلكتروني.
+- تسجيل الدخول عبر **Google** و **Facebook** (OAuth).
+- التحقق من الهوية عبر رمز OTP.
+- استعادة كلمة المرور.
 
-### `npm run eject`
+---
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## 🛠️ كيفية تشغيل المشروع
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### متطلبات التشغيل
+- Node.js v18 أو أحدث.
+- الباك إند يجب أن يكون شغالاً (سواء محلياً أو على Vercel).
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+### التطوير المحلي
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+1. **تثبيت الحزم:**
+   ```bash
+   npm install
+   ```
 
-## Learn More
+2. **إعداد ملف البيئة:**
+   أنشئ ملف `.env` في المسار الجذري بالمحتوى التالي:
+   ```env
+   # للتطوير المحلي (الباك إند على جهازك):
+   REACT_APP_API_URL=http://localhost:5000/api
+   REACT_APP_SOCKET_URL=http://localhost:5000
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+   # للتطوير مع الباك إند المرفوع على Vercel:
+   # REACT_APP_API_URL=https://budget-wise-back-end-five.vercel.app/api
+   # REACT_APP_SOCKET_URL=https://budget-wise-back-end-five.vercel.app
+   ```
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+3. **تشغيل التطبيق:**
+   ```bash
+   npm start
+   ```
+   سيعمل التطبيق على `http://localhost:3000`
 
-### Code Splitting
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+## ☁️ الاستضافة على Vercel
 
-### Analyzing the Bundle Size
+المشروع جاهز للرفع المباشر على Vercel.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+> [!IMPORTANT]
+> **متغيرات البيئة المطلوبة في Vercel (Settings → Environment Variables):**
+> - `REACT_APP_API_URL` = `https://budget-wise-back-end-five.vercel.app/api`
+> - `REACT_APP_SOCKET_URL` = `https://budget-wise-back-end-five.vercel.app`
 
-### Making a Progressive Web App
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+## 🔗 الربط مع الباك إند
 
-### Advanced Configuration
+يعتمد التطبيق بشكل كامل على ملف [`config.js`](./src/config.js) لتحديد رابط الـ API مركزياً بدلاً من كتابته في كل مكان، مما يجعل التبديل بين بيئة التطوير والإنتاج أمراً سهلاً للغاية.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+**رابط الباك إند المباشر:** `https://budget-wise-back-end-five.vercel.app`
 
-### Deployment
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+**تطوير:** فريق BudgetWise

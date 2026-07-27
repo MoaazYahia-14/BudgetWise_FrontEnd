@@ -1,0 +1,21 @@
+/* ألوان اللايت مود */
+:root {
+  --primary: #6C63FF;
+  --secondary: #14B8A6;
+  --background: #FFFFFF;
+  --card-bg: #F4F5FF;
+  --text-main: #111827;
+  --text-secondary: #6B7280;
+  --border: #E5E7EB;
+}
+
+/* ألوان الدارك مود */
+body.dark {
+  --background: #0F0F0F;
+  --card-bg: #1A1A2E;
+  --text-main: #F9FAFB;
+  --text-secondary: #9CA3AF;
+  --border: #2D2D3A;
+  --primary: #6C63FF;
+  --secondary: #14B8A6;
+}

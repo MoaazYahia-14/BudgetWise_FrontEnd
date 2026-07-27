@@ -1,0 +1,40 @@
+/* =============================================
+   استجابة صفحة اختيار اللغة للشاشات الصغيرة
+   ============================================= */
+
+@media (max-width: 768px) {
+
+  /* البطاقات تتكدس عموديًا */
+  .lang-options {
+    flex-direction: column;
+    width: 100%;
+    max-width: 300px;
+  }
+
+  /* البطاقة تصبح أفقية */
+  .lang-card {
+    flex-direction: row;
+    justify-content: flex-start;
+    padding: 20px 24px;
+    min-width: unset;
+    width: 100%;
+    gap: 16px;
+  }
+
+  /* تصغير العلم */
+  .lang-flag {
+    font-size: 32px;
+  }
+
+  /* تصغير العنوان */
+  .lang-title {
+    font-size: 22px;
+  }
+
+  /* زر البدء بالعرض الكامل */
+  .lang-btn {
+    width: 100%;
+    max-width: 300px;
+  }
+
+}

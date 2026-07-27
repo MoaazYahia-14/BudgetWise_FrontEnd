@@ -1,0 +1,523 @@
+/* ========================
+   أنماط صفحة إنشاء الحساب
+   ======================== */
+
+/* ========================
+   الجانب الأيسر — الصورة
+   ======================== */
+
+/* العمود الأيسر */
+.signup-left {
+  height: 84%;
+}
+
+/* الصورة الجانبية */
+.Form_img {
+  background-image: url('../../../public/images/Sign_Up_Image.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 100%;
+  display: block;
+  border-radius: 16px 0 0 16px;
+}
+
+/* الطبقة الشفافة فوق الصورة */
+.blur {
+  background: rgba(100, 95, 210, 0.35);
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+/* النص في أسفل الصورة */
+.signup-overlay-text {
+  color: #ffffff;
+}
+
+.textimage {
+  position: absolute;
+  bottom: 40px;
+  left: auto;
+  padding: 0 32px;
+}
+
+.signup-overlay-text h2 {
+  font-size: 26px;
+  font-weight: 700;
+  margin-bottom: 10px;
+  line-height: 1.3;
+}
+
+.signup-overlay-text p {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.6;
+  margin: 0;
+  opacity: 0.95;
+}
+
+/* ========================
+   الجانب الأيمن — النموذج
+   ======================== */
+
+/* العمود الأيمن */
+.signup-right {
+  position: relative;
+  /* background: var(--background); */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 60px;
+  flex-shrink: 0;
+}
+
+/* الحاوية الداخلية للنموذج */
+.signup-form-wrapper {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: 480px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* الشعار */
+.signup-logo {
+  width: 250px;
+  height: auto;
+  margin-bottom: 20px;
+}
+
+/* عنوان الصفحة */
+.signup-form-wrapper h1 {
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--text-main);
+  margin-bottom: 24px;
+  text-align: center;
+}
+
+/* النموذج */
+.signup-form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* مجموعة الحقل */
+.signup-form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  width: 100%;
+}
+
+/* التسمية */
+.signup-form-group label {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--text-main);
+}
+
+/* النجمة الحمراء */
+.signup-form-group label .required-star {
+  color: #EF4444;
+  margin-left: 3px;
+}
+
+/* حقل الإدخال */
+.signup-input {
+  width: 100%;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 12px 16px;
+  font-size: 14px;
+  color: var(--text-main);
+  background: var(--background);
+  outline: none;
+  transition: border-color 0.2s ease;
+}
+
+.signup-input::placeholder {
+  color: #9CA3AF;
+}
+
+.signup-input:focus {
+  border-color: var(--primary);
+}
+
+/* زر إنشاء الحساب */
+.signup-btn-primary {
+  width: 100%;
+  background: var(--primary);
+  color: #ffffff;
+  border: none;
+  border-radius: 8px;
+  padding: 14px;
+  font-size: 16px;
+  font-weight: 700;
+  cursor: pointer;
+  margin-top: 8px;
+  transition: opacity 0.7s ease;
+}
+
+.signup-btn-primary:hover {
+  opacity: 0.9;
+}
+
+/* الفاصل — أو */
+.signup-divider {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+  margin: 16px 0;
+}
+
+.signup-divider::before,
+.signup-divider::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: var(--border);
+}
+
+.signup-divider span {
+  font-size: 13px;
+  color: #6B7280;
+  white-space: nowrap;
+}
+
+/* أزرار التسجيل الاجتماعي */
+.signup-social-buttons {
+  display: flex;
+  gap: 12px;
+  width: 100%;
+}
+
+.signup-social-btn {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  background: #ffffff;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 11px 12px;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--text-main);
+  cursor: pointer;
+  transition: background 0.2s ease, border-color 0.2s ease;
+  white-space: nowrap;
+}
+
+.signup-social-btn:hover {
+  background: #F9FAFB;
+}
+
+.signup-social-btn svg {
+  flex-shrink: 0;
+}
+
+/* ========================
+   رسالة الخطأ في النموذج
+   ======================== */
+
+/* رسالة خطأ التحقق من الحقول */
+.signup-error {
+  color: #EF4444;
+  font-size: 13px;
+  margin-top: 8px;
+  text-align: center;
+}
+
+/* ========================
+   نافذة التحقق من OTP
+   ======================== */
+
+/* الطبقة الداكنة خلف الـ popup */
+.otp-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+/* بطاقة الـ popup */
+.otp-popup {
+  background: white;
+  border-radius: 16px;
+  padding: 40px;
+  width: 100%;
+  max-width: 420px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  direction: inherit;
+  position: relative;
+  animation: otp-popup-in 0.3s ease forwards;
+}
+
+/* أيقونة الإيميل */
+.otp-icon {
+  font-size: 48px;
+}
+
+/* عنوان الـ popup */
+.otp-popup h2 {
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--text-main);
+  margin: 0;
+}
+
+/* النص التوضيحي */
+.otp-subtitle {
+  font-size: 14px;
+  color: var(--text-secondary);
+  line-height: 1.6;
+  margin: 0;
+  direction: inherit;
+  text-align: center;
+}
+
+.otp-success {
+  color: #10B981;
+  font-size: 13px;
+  margin: 0;
+  text-align: center;
+}
+
+.otp-resend-timer {
+  color: var(--text-secondary);
+  font-size: 13px;
+}
+
+.otp-success-screen {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  padding: 10px 0;
+}
+
+.otp-success-logo {
+  width: 160px;
+  height: auto;
+  margin-bottom: 8px;
+}
+
+.otp-checkmark {
+  width: 80px;
+  height: 80px;
+}
+
+.otp-checkmark-svg {
+  width: 80px;
+  height: 80px;
+  stroke: #10B981;
+  stroke-width: 3;
+}
+
+.otp-checkmark-circle {
+  stroke-dasharray: 166;
+  stroke-dashoffset: 166;
+  stroke: #10B981;
+  animation: otp-circle 0.6s ease forwards;
+}
+
+.otp-checkmark-path {
+  stroke-dasharray: 48;
+  stroke-dashoffset: 48;
+  animation: otp-check 0.4s 0.6s ease forwards;
+}
+
+@keyframes otp-circle {
+  to { stroke-dashoffset: 0; }
+}
+
+@keyframes otp-check {
+  to { stroke-dashoffset: 0; }
+}
+
+.otp-success-title {
+  font-size: 22px;
+  font-weight: 700;
+  color: #10B981;
+  margin: 0;
+}
+
+.otp-success-msg {
+  font-size: 14px;
+  color: var(--text-secondary);
+  text-align: center;
+  margin: 0;
+  line-height: 1.6;
+}
+
+.otp-resend-success {
+  color: #10B981;
+  font-size: 13px;
+  margin: 0;
+  text-align: center;
+}
+
+/* حاوية خانات الـ OTP */
+.otp-inputs {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  margin: 8px 0;
+  direction: ltr;
+}
+
+/* خانة رقم واحدة */
+.otp-input {
+  width: 48px;
+  height: 56px;
+  border: 2px solid var(--border);
+  border-radius: 10px;
+  text-align: center;
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--text-main);
+  outline: none;
+  transition: border-color 0.2s ease;
+  direction: ltr;
+}
+
+.otp-input:focus {
+  border-color: var(--primary);
+}
+
+/* رسالة خطأ الـ OTP */
+.otp-error {
+  color: #EF4444;
+  font-size: 13px;
+  margin: 0;
+}
+
+/* زر التحقق */
+.otp-btn {
+  width: 100%;
+  height: 52px;
+  background: var(--primary);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: opacity 0.2s ease;
+}
+
+.otp-btn:hover {
+  opacity: 0.9;
+}
+
+/* نص إعادة الإرسال */
+.otp-resend {
+  font-size: 13px;
+  color: var(--text-secondary);
+  margin: 0;
+}
+
+/* رابط إعادة الإرسال */
+.otp-resend-link {
+  color: var(--primary);
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.otp-resend-link:hover {
+  text-decoration: underline;
+}
+
+.signup-create {
+  text-align: center;
+  font-size: 14px;
+  color: var(--text-secondary);
+  margin-top: 16px;
+}
+
+.signup-create-link {
+  color: var(--text-main);
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.signup-create-link:hover {
+  color: var(--primary);
+}
+
+/* ========================
+   زر إغلاق الـ OTP popup
+   ======================== */
+
+.otp-popup-closing {
+  animation: otp-popup-out 0.3s ease forwards;
+}
+
+@keyframes otp-popup-in {
+  from {
+    opacity: 0;
+    transform: scale(0.9) translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+@keyframes otp-popup-out {
+  from {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: scale(0.9) translateY(20px);
+  }
+}
+
+.otp-close-btn {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--text-secondary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4px;
+  border-radius: 50%;
+  transition: background 0.2s, color 0.2s;
+}
+
+.otp-close-btn:hover {
+  background: var(--card-bg); /* تأكد من تعريف هذا المتغير في variables.css، أو استخدم لون بديل لو غير موجود */
+  color: var(--text-main);
+}
+
+body[dir="rtl"] .otp-close-btn {
+  right: unset;
+  left: 16px;
+}

@@ -1,0 +1,31 @@
+/* ========================
+   استجابة صفحة تسجيل الدخول للشاشات الصغيرة
+   ======================== */
+
+@media (max-width: 768px) {
+
+  /* إخفاء الصورة الجانبية */
+  .login-left {
+    display: none;
+  }
+
+  /* النموذج يأخذ العرض الكامل */
+  .login-right {
+    padding: 30px 20px;
+  }
+
+  /* تصغير الشعار */
+  .login-logo {
+    width: 180px;
+  }
+
+  /* تصغير العنوان */
+  .login-form-wrapper h1 {
+    font-size: 22px;
+  }
+
+  /* الأزرار الاجتماعية تتكدس */
+  .login-social-buttons {
+    flex-direction: column;
+  }
+}

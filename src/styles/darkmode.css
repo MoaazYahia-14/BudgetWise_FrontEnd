@@ -1,0 +1,5 @@
+/* هذا الملف يحتوي على تأثيرات الدارك مود الإضافية */
+body.dark {
+  background-color: var(--background);
+  color: var(--text-main);
+}
